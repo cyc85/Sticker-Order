@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Order Your Stickers</h2>
+        <form id="orderForm">
+            <label>Product Name</label>
+            <input type="text" name="productName" required>
+            
+            <label>Size (Height x Width) (cm)</label>
+            <input type="text" name="size" required>
+            
+            <label>Material</label>
+            <select name="material">
+                <option value="sticker paper">Sticker Paper</option>
+                <option value="plastic sticker">Plastic Sticker</option>
+            </select>
+            
+            <label>Finishing</label>
+            <select name="finishing">
+                <option value="not available">Not Available</option>
+                <option value="gloss">Gloss Laminate</option>
+                <option value="matte">Matte Laminate</option>
+            </select>
+            
+            <label>Quantity (pcs)</label>
+            <input type="number" name="quantity" required>
+            
+            <label>Completion Date</label>
+            <input type="date" name="completionDate" required>
+            
+            <label>Your Name</label>
+            <input type="text" name="customerName" required>
+            
+            <label>Phone Number</label>
+            <input type="tel" name="customerPhone" required>
+            
+            <label>Your Email</label>
+            <input type="email" name="customerContact" required>
+            
+            <label>Upload Design File</label>
+            <input type="file" name="designFile" required>
+            
+            <label>Remarks</label>
+            <textarea name="remarks"></textarea>
+            
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Order submitted successfully!');
+        });
+    </script>
+</body>
+</html>
